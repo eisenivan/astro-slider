@@ -1,0 +1,97 @@
+// banners
+.banners {
+	//variables
+	@slider-width: 968px;
+	@slider-height: 416px;
+	height: @slider-height;
+	background-color: #444;
+	background-position: left center;
+	border-bottom: 1px solid @gray3;
+	.fixed {
+		position: absolute;
+		width: 100%;
+		height: @slider-height;
+		z-index:	5;
+		overflow: hidden;
+		.slide-center {
+			width: @slider-width;
+			height: @slider-height;
+			margin: auto;
+			position: relative;
+			.banners-callouts-container {
+				position: absolute;
+				bottom: 51px;
+				.banners-callouts-callout {
+					background: blue;
+					width: 256px;
+					height: 91px;
+					display: block;
+					background: url(/Content/images/icon-home-callouts.png) no-repeat;
+					&.systems {
+						background-position: left bottom;
+					}
+				}
+			}
+		}
+	}
+	.slide {
+		overflow: hidden;
+		position: absolute;
+		width: 100%;
+		height: @slider-height;
+		z-index: -1;
+		display: none;
+		&.active {
+			display: block;
+			z-index: 1;
+		}
+		&.next-slide {
+			z-index: 2;
+		}
+		.slide-center {
+			width: @slider-width;
+			height: @slider-height;
+			margin: auto;
+			position: relative;
+			.parallax {
+				position: absolute;
+				display: block;
+				opacity: 0;
+				filter: alpha(opacity=0);
+				img {
+					width: auto;
+					max-width: none;
+				}
+			}
+		}
+	}
+
+	.title {
+		display: block;
+		text-align: center;
+		width: 100%;
+		top: 16px;
+		text-transform: uppercase;
+		color: white;
+		text-shadow:
+			#000 1px 1px 12px,
+			#000 -1px 1px 12px,
+			#000 -1px -1px 12px,
+			#000 1px -1px 12px;
+		color: white;
+		#font.helvetica(36px,@helvetica73);
+		line-height: 36px;
+	}
+	#drill {
+		right: -48px; top: 42px;
+	}
+	#other_drill {
+		right: -48px; top: 60px;
+	}
+	#bluebox {
+		background: blue;
+		height: 30px; width: 60px;
+		color: white;
+		bottom: 15px;
+	}
+}
