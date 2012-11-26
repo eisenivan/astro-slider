@@ -28,6 +28,7 @@
 	</div>
 </div>
 
+<script type="text/javascript" src="jquery.astroSlide.js"></script>
 <script type="text/javascript">
 	$(function(){
 		$('#banners').astroSlide({
