@@ -21,17 +21,17 @@
 			var complete = true;
 
 			var init = function(options) {
-					$(window).load(function() {
+					
 
 						if(!$('.slide.active', scope).length) {
 							$('.slide:first', scope).addClass('active');
 						}
 
 						var active = $('.slide.active', scope);
+
+						$('.fixed', scope).fadeIn();
+
 						slideIn(options, active);
-
-					});
-
 
 				};
 
@@ -64,6 +64,13 @@
 						var distancey = 0;
 						if(typeof(element.attr('data-distance-y')) !== 'undefined') {
 							distancey = parseInt(element.attr('data-distance-y'), 10);
+						}
+
+						if(typeof(element.attr('data-revert')) !== 'undefined') {
+							if(element.attr('data-revert') === 'false'){
+								distancex = distancex * -1;
+								distancey = distancey * -1;
+							}
 						}
 
 						var positionx = parseInt(element.attr('data-position-x'), 10);
@@ -175,24 +182,31 @@
 			return this.each(function() {
 				var o = options;
 
-				init(o);
+				//initialize
+				$(window).load(function(){
+					setTimeout(function(){
+						init(o);
+					}, 400);
+				});
 
+				//disable animation on link clicks
 				$('a', $(this)).click(function(e) {
 					e.stopPropagation();
 				});
 
+				//if click advance is turned up set up the hook
 				if(o.clickAdvance) {
 					$(this).click(function() {
 						changeSlide(o);
 					});
 				}
 
+				//if autoscroll is turned on set the interval
 				if(o.autoScroll) {
 					setInterval(function() {
 						changeSlide(o);
 					}, o.autoScrollTimer);
 				}
-
 			});
 		}
 	});

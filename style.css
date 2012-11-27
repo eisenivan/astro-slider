@@ -1,0 +1,90 @@
+.banners {
+  height: 416px;
+  background-color: #444;
+  background-position: left center;
+  border-bottom: 1px solid ;
+}
+.banners .fixed {
+  position: absolute;
+  width: 100%;
+  height: 416px;
+  z-index: 5;
+  overflow: hidden;
+}
+.banners .fixed .slide-center {
+  width: 968px;
+  height: 416px;
+  margin: auto;
+  position: relative;
+}
+.banners .fixed .slide-center .banners-callouts-container {
+  position: absolute;
+  bottom: 51px;
+}
+.banners .fixed .slide-center .banners-callouts-container .banners-callouts-callout {
+  background: blue;
+  width: 256px;
+  height: 91px;
+  display: block;
+  background: url(/Content/images/icon-home-callouts.png) no-repeat;
+}
+.banners .fixed .slide-center .banners-callouts-container .banners-callouts-callout.systems {
+  background-position: left bottom;
+}
+.banners .slide {
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  height: 416px;
+  z-index: -1;
+  display: none;
+}
+.banners .slide.active {
+  display: block;
+  z-index: 1;
+}
+.banners .slide.next-slide {
+  z-index: 2;
+}
+.banners .slide .slide-center {
+  width: 968px;
+  height: 416px;
+  margin: auto;
+  position: relative;
+}
+.banners .slide .slide-center .parallax {
+  position: absolute;
+  display: block;
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+.banners .slide .slide-center .parallax img {
+  width: auto;
+  max-width: none;
+}
+.banners .title {
+  display: block;
+  text-align: center;
+  width: 100%;
+  top: 16px;
+  text-transform: uppercase;
+  color: white;
+  text-shadow: #000 1px 1px 12px, #000 -1px 1px 12px, #000 -1px -1px 12px, #000 1px -1px 12px;
+  color: white;
+  line-height: 36px;
+}
+.banners #drill {
+  right: -48px;
+  top: 42px;
+}
+.banners #other_drill {
+  right: -48px;
+  top: 60px;
+}
+.banners #bluebox {
+  background: blue;
+  height: 30px;
+  width: 60px;
+  color: white;
+  bottom: 15px;
+}
