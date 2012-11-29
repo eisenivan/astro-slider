@@ -21,17 +21,16 @@
 			var complete = true;
 
 			var init = function(options) {
-					
 
-						if(!$('.slide.active', scope).length) {
-							$('.slide:first', scope).addClass('active');
-						}
+					if(!$('.slide.active', scope).length) {
+						$('.slide:first', scope).addClass('active');
+					}
 
-						var active = $('.slide.active', scope);
+					var active = $('.slide.active', scope);
 
-						$('.fixed', scope).fadeIn();
+					$('.fixed', scope).fadeIn();
 
-						slideIn(options, active);
+					slideIn(options, active);
 
 				};
 
