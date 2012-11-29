@@ -2,7 +2,7 @@
 <script type="text/javascript" src="jquery.astroSlider.js"></script>
 <link rel="stylesheet" type="text/css" href="style.css">
 
-<div class="banners">
+<div class="astroslider">
 	<div class="slide" style="background: url(http://subtlepatterns.com/patterns/light_honeycomb.png)">
 		<div class="slide-center">
 			<h1 class="parallax title" data-distance-x="0" data-distance-y="-50" data-velocity="1">Slide One</h1>
@@ -23,7 +23,7 @@
 
 <script type="text/javascript">
 	$(function(){
-		$('.banners').astroSlide({
+		$('.astroslider').astroSlide({
 			duration: 500,
 			autoScroll: true,
 			autoScrollTimer: 8000,
