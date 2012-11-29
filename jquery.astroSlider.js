@@ -1,5 +1,7 @@
 /* ===========================================================
- * AstroSlide v1
+ * AstroSlide v1.1
+ * Written by Ivan Eisenberg (github: eisenivan)
+ * November 2012
  * =========================================================== */
 
 (function($) {

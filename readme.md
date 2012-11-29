@@ -19,8 +19,21 @@ Instantiate the plugin after JQuery and the plugin have loaded. The options show
 		});
 	});
 	
+### Options
+#### duration
+The duration option represents the default duration on an animation. The default value is 500ms (1/2 second).
+
+#### autoScroll
+The autoScroll option accepts a boolean value. If it is set to true the slider will rotate through the slides automatically. The default value is true.
+
+#### autoScrollTimer
+The duration between autoScroll slide changes. The default value is 8000ms (8 seconds).
+
+#### clickAdvance
+This option accepts a boolean value. If it is set to true clicking inside the slider element will trigger a slide advance.
+	
 ## Usage
-Inside the target wrapper ( `<div class="astroslider"` by default) you will add your slides. The plugin is looking for elements with the class `slide`.
+Inside the target wrapper ( `<div class="astroslider"` by default ) you will add your slides. The plugin is looking for elements with the class `slide`.
 
     <div class="slide">
         (Code Here)
@@ -29,7 +42,7 @@ Inside the target wrapper ( `<div class="astroslider"` by default) you will add 
 The parallax (animated) elements can be any element inside the slide container with the class `.parallax`.
 
     <div class="slide">
-        <h1 class="parallax">I'm Animated</h1>
+        <h1 class="parallax">I Could Be Animated</h1>
     </div>
 
 You can use various data attributes on a parallax item to manipulate its animation properties.
