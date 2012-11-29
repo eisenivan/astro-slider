@@ -6,7 +6,7 @@ Include the plugin after including JQuery.
 
 Include the CSS file, or integrate the styles into your css file.
 
-`<script type="text/javascript" src="jquery.astroSlider.js"></script>`
+`<link rel="stylesheet" type="text/css" href="style.css">`
 
 Instantiate the plugin after JQuery and the plugin have loaded. The options show are optional.
 
