@@ -19,7 +19,7 @@ Instantiate the plugin after JQuery and the plugin have loaded. The options show
 		});
 	});
 	
-## Useage
+## Usage
 Inside the target wrapper ( `<div class="astroslider"` by default) you will add your slides. The plugin is looking for elements with the class `slide`.
 
     <div class="slide">
