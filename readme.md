@@ -1,4 +1,6 @@
 # Astro Slider
+AstroSlider was written to give more life to the hum drum slider. AstroSlider makes it easy to add animation to different slide elements by allowing the user to position the elements in each slide first with CSS, and and the animation instructions later. 
+
 ## Installation
 Include the plugin after including JQuery.
 
