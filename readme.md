@@ -85,5 +85,18 @@ This boolean value determines if the element will transition out the way it came
     // as it animated in.
     data-distance-y="-20"
 
+### Preloading
+You can defer the loading of an image by making use of the `data-image` attribute. In lieu of using `src` on an image file, simply place the image path in the `data-image` tag.
 
+    <img data-image="/path/to/image.png">
+    
+The plugin will check the first slide for these assets first and load them. When those assests have all loaded it will proceede to load the remaining assets. This is recommended if you are using multiple "heavy" images.
+
+You can also place a defered loading background image on the slide itself.
+
+    <div class="slide" data-image="/path/to/image.jpg">
+       //slide content here
+    </div>
+    
+This will place a `style="url(/path/to/image.jpg)"` attribute on the slide div.
 
