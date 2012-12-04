@@ -35,10 +35,15 @@
 						ready = false;
 						//load secondary slides
 						$('.slide', scope).each(function(){
-							$(this).css('background-image', 'url('+$(this).attr('data-image')+')');
+							
+							if(typeof $(this).attr('data-image') !== 'undefined')
+								$(this).css('background-image', 'url('+$(this).attr('data-image')+')');
+							
 							$('img', this).each(function(){
-								$(this).attr('src', $(this).attr('data-image'));
+								if(typeof $(this).attr('data-image') !== 'undefined')
+									$(this).attr('src', $(this).attr('data-image'));
 							});
+							//tell the slider that we are ready
 							ready = true;
 						});
 					});
