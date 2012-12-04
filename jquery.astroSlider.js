@@ -1,7 +1,5 @@
 /* ===========================================================
- * AstroSlide v1.1
- * Written by Ivan Eisenberg (github: eisenivan)
- * November 2012
+ * AstroSlide v1.2
  * =========================================================== */
 
 (function($) {
@@ -21,9 +19,10 @@
 
 			var scope = $(this);
 			var complete = true;
+			var ready = false;
 
 			var init = function(options) {
-
+					
 					if(!$('.slide.active', scope).length) {
 						$('.slide:first', scope).addClass('active');
 					}
@@ -32,8 +31,17 @@
 
 					$('.fixed', scope).fadeIn();
 
-					slideIn(options, active);
-
+					slideIn(options, active, function(){
+						ready = false;
+						//load secondary slides
+						$('.slide', scope).each(function(){
+							$(this).css('background-image', 'url('+$(this).attr('data-image')+')');
+							$('img', this).each(function(){
+								$(this).attr('src', $(this).attr('data-image'));
+							});
+							ready = true;
+						});
+					});
 				};
 
 			var coordinate = function(element) {
@@ -150,7 +158,7 @@
 			var changeSlide = function(options, next) {
 
 				//ensure last change is complete
-				if(complete === true) {
+				if(complete === true && ready === true) {
 					complete = false;
 					// Set Change Variables
 					var current = $('.active', scope);
@@ -185,6 +193,19 @@
 
 				//initialize
 				$(window).load(function(){
+
+					//set ready variable
+					ready = true;
+
+					//preload
+					var first_slide = $('.slide:first', scope);
+					var first_slide_images = $('.slide:first img', scope);
+					first_slide.css('background-image', 'url('+first_slide.attr('data-image')+')');
+					first_slide_images.each(function(){
+						if(typeof $(this).attr('data-image') !== 'undefined')
+							$(this).attr('src', $(this).attr('data-image'));
+					});
+
 					setTimeout(function(){
 						init(o);
 					}, 400);
